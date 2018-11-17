@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-sm-12 col-lg-6 ">
+    <div class="chart-border">
+      <div class="text-center"><b>singal data set line chart</b></div>
+      <div class="text-center">with value over points and dot size</div>
+      <ngx-frappe-charts-bar [type]="'line'" [data]="barchart1" [height]="500"
+        [lineOptions]="lineOptions1" [valuesOverPoints]="'true'"></ngx-frappe-charts-bar>
+    </div>
+  </div>
+  <div class="col-sm-12 col-lg-6">
+    <div class="chart-border">
+      <div class="text-center"><b>multi data set line chart</b></div>
+      <div class="text-center">with value over points and region fill</div>
+      <ngx-frappe-charts-bar [type]="'line'" [data]="barchart1" [colors]="colors"
+        [height]="500" [lineOptions]="lineOptions2" [valuesOverPoints]="'true'"></ngx-frappe-charts-bar>
+    </div>
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col-sm-12 col-lg-6">
+    <div class="chart-border">
+      <div class="text-center"><b>multi data set stacked Bar chart</b></div>
+      <div class="text-center">with xIsSeries: true</div>
+      <ngx-frappe-charts-bar [type]="'line'" [data]="barchart2" [barOptions]="barOptions"
+        [colors]="colors" [height]="500" [axisOptions]="axisOptions"></ngx-frappe-charts-bar>
+    </div>
+
+  </div>
+  <div class="col-sm-12 col-lg-6">
+    <div class="chart-border">
+      <div class="text-center"><b>multi data set Bar chart</b></div>
+      <ngx-frappe-charts-bar [type]="'line'" [data]="barchart3" [barOptions]="barOptions"
+        [colors]="colors" [height]="500"></ngx-frappe-charts-bar>
+    </div>
+  </div>
+</div>

@@ -23,18 +23,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": ["./projects/ngx-frappe-charts/node_modules/frappe-charts/dist/frappe-charts.min.iife.js"]
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -115,6 +114,47 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-frappe-charts": {
+      "root": "projects/ngx-frappe-charts",
+      "sourceRoot": "projects/ngx-frappe-charts/src",
+      "projectType": "library",
+      "prefix": "ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-frappe-charts/tsconfig.lib.json",
+            "project": "projects/ngx-frappe-charts/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ngx-frappe-charts/ng-package.prod.json"
+            }
+          }
+
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-frappe-charts/src/test.ts",
+            "tsConfig": "projects/ngx-frappe-charts/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-frappe-charts/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-frappe-charts/tsconfig.lib.json",
+              "projects/ngx-frappe-charts/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

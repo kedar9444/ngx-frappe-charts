@@ -1,20 +1,57 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container">
 
+  <div class="row mt-5">
+    <div class="col-12 chart-border">
+      <div class="text-center mt-2"><b>NGX-FRAPPE-CHART</b></div>
+      <div class="text-center mt-2 mb-2">A simple and easy to use angular
+        wrapper on top of frappe
+        for generating awesome graphs.</div>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-12 chart-border">
+      <div class="text-center"><b>Bar chart</b></div>
+      <ngx-frappe-charts-bar [type]="'bar'" [data]="barChartData" [height]="500"
+        [yMarkers]="yMarkers" [yRegions]="yRegions" [colors]="barChartColor"></ngx-frappe-charts-bar>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-12 chart-border">
+      <div class="text-center"><b>Line chart</b></div>
+      <ngx-frappe-charts-bar [type]="'line'" [data]="lineChartData" [height]="500"
+        [yMarkers]="yMarkers" [yRegions]="yRegions"></ngx-frappe-charts-bar>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-12 chart-border">
+      <div class="text-center"><b>Mixed-Axis chart</b></div>
+      <ngx-frappe-charts-bar [type]="'axis-mixed'" [data]="mixedChartData"
+        [height]="500" [yMarkers]="yMarkers" [yRegions]="yRegions" [colors]="lineChartColor"></ngx-frappe-charts-bar>
+    </div>
+  </div>
+
+
+  <div class="mt-5">
+    <app-pie-chart></app-pie-chart>
+  </div>
+
+
+  <div class="row mt-5 mb-5">
+    <div class="col-12 chart-border" style="overflow-x: auto">
+      <div class="text-center"><b>Heatmap chart</b></div>
+      <ngx-frappe-charts-heatmap [data]="heatmapData"></ngx-frappe-charts-heatmap>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <app-bar-chart></app-bar-chart>
+  </div>
+
+  <div class="mt-5">
+    <app-line-chart></app-line-chart>
+  </div>
+
+
+</div>
