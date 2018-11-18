@@ -29,12 +29,13 @@ Add the frappe library to your Angular.json file:
 ```json
  "architect": {
     "build": {
-      ......
+      ...
       "options": {
-        ......
+        ...
           "scripts": [ "./node_modules/frappe-charts/dist/frappe-charts.min.iife.js"]
-        ......
-      } 
+        ...
+      }
+      ...
     }
 }
 ```
@@ -250,16 +251,14 @@ export interface LabelPosition {
 This component is used for drawing pie and percentage charts. you have to add the componant as follows.
 
 ```html
-<ngx-frappe-charts-percentage 
-  [type]="'pie'" 
-  [data]="piechart1" 
-  [height]="500">
+<ngx-frappe-charts-percentage [type]="'pie'" [data]="piechart1" [height]="500">
 </ngx-frappe-charts-percentage>
 
 <ngx-frappe-charts-percentage
   [type]="'percentage'"
   [data]="piechart1"
-  [height]="500">
+  [height]="500"
+>
 </ngx-frappe-charts-percentage>
 ```
 
@@ -338,19 +337,17 @@ export interface BarOptions {
 }
 ```
 
-
 ## Heatmap chart tag
 
 This component is used for drawing Heatmap charts. you have to add the componant as follows.
 
 ```html
-    <ngx-frappe-charts-heatmap 
-      [data]="heatmapData"
-      [countLabel]="'count'"
-      [discreteDomains]="1"
-      >
-
-    </ngx-frappe-charts-heatmap>
+<ngx-frappe-charts-heatmap
+  [data]="heatmapData"
+  [countLabel]="'count'"
+  [discreteDomains]="1"
+>
+</ngx-frappe-charts-heatmap>
 ```
 
 ### Valid inputs
@@ -408,7 +405,7 @@ Don't forget to check out the [Frappe charts docs](https://frappe.io/charts/docs
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](CONTRIBUTOR.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
@@ -416,7 +413,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
 
 ## Acknowledgments
 
