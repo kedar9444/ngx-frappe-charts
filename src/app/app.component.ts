@@ -82,7 +82,6 @@ export class AppComponent {
   getdatapoints() {
     const points = {};
     const now = new Date('2018-12-31');
-    const daysOfYear = [];
     for (const d = new Date(2018, 0, 1); d <= now; d.setDate(d.getDate() + 1)) {
       const date = d.getTime() / 1000;
       points[date] = Math.floor(Math.random() * 100 + 1);

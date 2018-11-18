@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { HeatmapDataModel } from '../interfaces/heatmap-data.model';
 
 @Component({
   selector: 'ngx-frappe-charts-heatmap',
@@ -14,9 +15,10 @@ import { Component, Input } from '@angular/core';
   `
 })
 export class FrappeChartsHeatmapComponent {
-  @Input() data: any;
+  @Input() data: HeatmapDataModel;
   @Input() title?: string;
   @Input() countLabel?: string;
   @Input() discreteDomains?: number;
   @Input() colors?: string[5];
 }
+

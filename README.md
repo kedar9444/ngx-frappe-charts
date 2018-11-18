@@ -56,7 +56,7 @@ Ngx-frappy-chart exports 3 different components i.e. bar, pie, and heatmap to dr
 
 ## Bar chart, Line chart and Axis-Mixed chart tag
 
-This component is used for drawing bar, line nad mixed charts. you have to add the componant as follows.
+This component is used for drawing bar, line and mixed charts. you have to add the componant as follows.
 
 ```html
 <ngx-frappe-charts-bar
@@ -97,7 +97,7 @@ Valid inputs foe drawing bar, line and axis-mixed charts are as follows.
   </tr>
     <tr>
     <td>colors</td>
-    <td>string[]`</td>
+    <td>string[]</td>
     <td>Hexadecimal values for colors including # e.g ['#a8026f', '#db2d43', '#e76838']</td>
   </tr>
     <tr>
@@ -194,6 +194,7 @@ export interface BarOptions {
   stacked: number; // default 0,
 }
 ```
+
 **`line-options.model.ts`**
 
 ```ts
@@ -227,36 +228,174 @@ export interface YRegions {
 }
 ```
 
-
 **`label-position.model.ts`**
 
 ```ts
 export interface LabelPosition {
-  labelPos: string;  // 'left' | 'right'
+  labelPos: string; // 'left' | 'right'
+}
+```
+
+## Percentage chart tag
+
+This component is used for drawing pie and percentage charts. you have to add the componant as follows.
+
+```html
+<ngx-frappe-charts-percentage 
+  [type]="'pie'" 
+  [data]="piechart1" 
+  [height]="500">
+</ngx-frappe-charts-percentage>
+
+<ngx-frappe-charts-percentage
+  [type]="'percentage'"
+  [data]="piechart1"
+  [height]="500">
+</ngx-frappe-charts-percentage>
+```
+
+## Valid inputs
+
+Valid inputs foe drawing pecentage charts are as follows.
+
+<table>
+  <tr>
+    <th>Input</th>
+    <th>Type</th>
+    <th>Valid Input values</th>
+  </tr>
+  <tr>
+    <td>data</td>
+    <td>GraphDataModel</td>
+    <td> - </td>
+  </tr>
+    <tr>
+    <td>title</td>
+    <td>string</td>
+    <td> - </td>
+  </tr>
+      <tr>
+    <td>colors</td>
+    <td>string[]</td>
+    <td> - </td>
+  </tr>
+      <tr>
+    <td>height</td>
+    <td>number</td>
+    <td> - </td>
+  </tr>
+      <tr>
+    <td>type</td>
+    <td>string</td>
+    <td> - </td>
+  </tr>
+      <tr>
+    <td>maxSlices</td>
+    <td>number</td>
+    <td> - </td>
+  </tr>
+        <tr>
+    <td>barOptions</td>
+    <td>BarOptions</td>
+    <td> - </td>
+  </tr>
+</table>
+
+## Custom models
+
+where `GraphDataModel` , `BarOptions` are interfaces as follows.
+
+**`graph-data.model.ts`**
+
+```ts
+export interface GraphDataModel {
+  labels: string[];
+  datasets: GraphDatasetModel[];
+}
+
+export interface GraphDatasetModel {
+  name: string;
+  chartType?: string;
+  values: number[];
+}
+```
+
+**`bar-options.model.ts`**
+
+```ts
+export interface BarOptions {
+  height: number; // default: 20 only for barF
+  depth: number; // default: 2 only for bar
 }
 ```
 
 
-Don't forget to check out the [RunKit embed docs](https://runkit.com/docs/embed#options).
+## Heatmap chart tag
 
-## Inputs
-
-### source : string
-
-Basically there are two inputs one is [gistId] and second is [gistFileName].
-
-**`[gistId]`** : is the id present after you username when you open your gist on github.
-
-**`[gistFileName]`** : Before creating any Gist github asks for the filename you have to enter the same.
-
-Please check below image for more details.
+This component is used for drawing Heatmap charts. you have to add the componant as follows.
 
 ```html
-<app-ngx-gist-runkit
-  [gistId]="gistId"
-  [gistFileName]="gistFileName"
-></app-ngx-gist-runkit>
+    <ngx-frappe-charts-heatmap 
+      [data]="heatmapData"
+      [countLabel]="'count'"
+      [discreteDomains]="1"
+      >
+
+    </ngx-frappe-charts-heatmap>
 ```
+
+## Valid inputs
+
+Valid inputs foe drawing Heatmap charts are as follows.
+
+<table>
+  <tr>
+    <th>Input</th>
+    <th>Type</th>
+    <th>Valid Input values</th>
+  </tr>
+  <tr>
+    <td>data</td>
+    <td>HeatmapDataModel</td>
+    <td> - </td>
+  </tr>
+    <tr>
+    <td>title</td>
+    <td>string</td>
+    <td> - </td>
+  </tr>
+      <tr>
+    <td>colors</td>
+    <td>string[]</td>
+    <td> - </td>
+  </tr>
+      <tr>
+    <td>countLabel</td>
+    <td>string</td>
+    <td> - </td>
+  </tr>
+      <tr>
+    <td>discreteDomains</td>
+    <td>number</td>
+    <td> 1 or 0 </td>
+  </tr>
+</table>
+
+## Custom models
+
+where `HeatmapDataModel` is interfaces as follows.
+
+**`heatmap-data.model.ts`**
+
+```ts
+export interface HeatmapDataModel {
+  start: Date; // e.g. new Date('2018-12-31')
+  end: Date;
+  dataPoints: any; //  { '1524064033': 8, /* ... */},
+}
+```
+
+Don't forget to check out the [Frappe charts docs](https://frappe.io/charts/docs).
 
 ## Contributing
 
@@ -264,9 +403,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Authors
 
-- **Billie Thompson** - _Initial work_ - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+- **Kedar Paritkar** - Software Developer - Tieto India.
 
 ## License
 
@@ -274,6 +411,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Thanks to Frappe Charts for creating this awesome library.
