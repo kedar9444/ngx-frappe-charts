@@ -8,7 +8,7 @@
         <a href="https://www.npmjs.com/package/ngx-frappe-chart">
             <b>Download NPM Package » </b>
         </a>
-        <a href="https://codepen.io/pratu16x7/pen/wjKBoq">
+        <a href="https://stackblitz.com/edit/ngx-frappe-chart-demo?embed=1&file=src/app/app.component.html">
             <b> Edit at Stackbliz »</b>
         </a>
     </p>
