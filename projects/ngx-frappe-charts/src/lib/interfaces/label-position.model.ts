@@ -1,3 +1,3 @@
 export interface LabelPosition {
-  labelPos: 'left' | 'right';
+  labelPos: string;  // 'left' | 'right'
 }

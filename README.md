@@ -42,8 +42,8 @@ import { FrappeChartsModule } from 'ngx-frappe-chart';
 @NgModule({
 	...
 	imports: [
-		...
-    FrappeChartsModule,
+    ...
+      FrappeChartsModule,
 		...
 	],
 	...
@@ -54,7 +54,7 @@ import { FrappeChartsModule } from 'ngx-frappe-chart';
 
 Ngx-frappy-chart exports 3 different components i.e. bar, pie, and heatmap to draw similar charts. We will check each one them and how to use them.
 
-## ngx-frappe-charts-bar
+## Bar chart, Line chart and Axis-Mixed chart
 
 This component is used for drawing bar, line nad mixed charts.
 
@@ -78,71 +78,158 @@ This component is used for drawing bar, line nad mixed charts.
   </tr>
   <tr>
     <td>data</td>
-    <td>`GraphDataModel`</td>
+    <td>GraphDataModel</td>
     <td> - </td>
   </tr>
   <tr>
     <td>title</td>
-    <td>`string`</td>
+    <td>string</td>
     <td>-</td>
   </tr>
   <tr>
     <td>type</td>
-    <td>`string`</td>
-    <td>`bar` , `line` , `axis-mixed` </td>
+    <td>string</td>
+    <td>bar , line , axis-mixed </td>
   </tr>
     <tr>
     <td>colors</td>
-    <td>`string[]`</td>
-    <td>Hexadecimal values for colors including # e.g `['#a8026f', '#db2d43', '#e76838']`</td>
+    <td>string[]`</td>
+    <td>Hexadecimal values for colors including # e.g ['#a8026f', '#db2d43', '#e76838']</td>
   </tr>
     <tr>
     <td>height</td>
-    <td>`number`</td>
-    <td>`default 240`</td>
+    <td>number</td>
+    <td>default 240</td>
   </tr>
       <tr>
     <td>isNavigable</td>
-    <td>`boolean`</td>
-    <td>`true` or `false` `default false`</td>
+    <td>boolean</td>
+    <td>true or false, default false</td>
   </tr>
   <tr>
     <td>valuesOverPoints</td>
-    <td>`boolean`</td>
-    <td>`true` or `false` `default false`</td>
+    <td>boolean</td>
+    <td>true or false, default false</td>
   </tr>
     <tr>
     <td>axisOptions</td>
-    <td>`AxisOptions`</td>
+    <td>AxisOptions</td>
     <td> - </td>
   </tr>
       <tr>
     <td>tooltipOptions</td>
-    <td>`TooltipOptions`</td>
-    <td>`</td>
+    <td>TooltipOptions</td>
+    <td></td>
   </tr>
       <tr>
     <td>barOptions</td>
-    <td>`BarOptions`</td>
+    <td>BarOptions</td>
     <td></td>
   </tr>
       <tr>
     <td>lineOptions</td>
-    <td>`LineOptions`</td>
+    <td>LineOptions</td>
     <td></td>
   </tr>
       <tr>
     <td>yMarkers</td>
-    <td>`YMarkers`</td>
+    <td>YMarkers[]</td>
     <td></td>
   </tr>
       <tr>
     <td>yRegions</td>
-    <td>`YRegions`</td>
+    <td>YRegions[]</td>
     <td></td>
   </tr>
 
 </table>
+
+# where `GraphDataModel` , `AxisOptions` , `TooltipOptions` , `BarOptions` , `LineOptions`, `YMarkers` , `YRegions` are interfaces as follows.
+
+**`graph-data.model.ts`**
+
+```ts
+export interface GraphDataModel {
+  labels: string[];
+  datasets: GraphDatasetModel[];
+}
+
+export interface GraphDatasetModel {
+  name: string;
+  chartType?: string;
+  values: number[];
+}
+```
+
+**`axis-options.model.ts`**
+
+```ts
+export interface AxisOptions {
+  xIsSeries?: boolean; // default: false
+  xAxisMode?: string; // default: 'span'
+  yAxisMode?: string; // default: 'span'
+}
+```
+
+**`tooltip-options.model.ts`**
+
+```ts
+export interface TooltipOptions {
+  formatTooltipX: any; // formatTooltipX: d => (d + '').toUpperCase(),
+  formatTooltipY: any; // formatTooltipY: d => d + ' pts',
+}
+```
+
+**`bar-options.model.ts`**
+
+```ts
+export interface BarOptions {
+  spaceRatio: number; // default: 1
+  stacked: number; // default 0,
+}
+```
+**`line-options.model.ts`**
+
+```ts
+export interface LineOptions {
+  dotSize: number; // default: 4
+  regionFill: number; // default: 0
+  hideDots: number; // default: 0
+  hideLine: number; // default: 0
+  heatline: number; // default: 0
+}
+```
+
+**`ymarkers.model.ts`**
+
+```ts
+export interface YMarkers {
+  label: string;
+  value: number;
+  options: LabelPosition;
+}
+```
+
+**`yregions.model.ts`**
+
+```ts
+export interface YRegions {
+  label: string;
+  start: number;
+  end: number;
+  options: LabelPosition;
+}
+```
+
+
+**`label-position.model.ts`**
+
+```ts
+export interface LabelPosition {
+  labelPos: string;  // 'left' | 'right'
+}
+```
+
 
 Don't forget to check out the [RunKit embed docs](https://runkit.com/docs/embed#options).
 
