@@ -54,9 +54,9 @@ import { FrappeChartsModule } from 'ngx-frappe-chart';
 
 Ngx-frappy-chart exports 3 different components i.e. bar, pie, and heatmap to draw similar charts. We will check each one them and how to use them.
 
-## Bar chart, Line chart and Axis-Mixed chart
+## Bar chart, Line chart and Axis-Mixed chart tag
 
-This component is used for drawing bar, line nad mixed charts.
+This component is used for drawing bar, line nad mixed charts. you have to add the componant as follows.
 
 ```html
 <ngx-frappe-charts-bar
@@ -69,6 +69,10 @@ This component is used for drawing bar, line nad mixed charts.
 >
 </ngx-frappe-charts-bar>
 ```
+
+## Valid inputs
+
+Valid inputs foe drawing bar, line and axis-mixed charts are as follows.
 
 <table>
   <tr>
@@ -144,7 +148,9 @@ This component is used for drawing bar, line nad mixed charts.
 
 </table>
 
-# where `GraphDataModel` , `AxisOptions` , `TooltipOptions` , `BarOptions` , `LineOptions`, `YMarkers` , `YRegions` are interfaces as follows.
+## Custom models
+
+where `GraphDataModel` , `AxisOptions` , `TooltipOptions` , `BarOptions` , `LineOptions`, `YMarkers` , `YRegions` are interfaces as follows.
 
 **`graph-data.model.ts`**
 
