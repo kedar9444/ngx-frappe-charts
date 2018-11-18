@@ -70,7 +70,7 @@ This component is used for drawing bar, line and mixed charts. you have to add t
 </ngx-frappe-charts-bar>
 ```
 
-## Valid inputs
+### Valid inputs
 
 Valid inputs foe drawing bar, line and axis-mixed charts are as follows.
 
@@ -148,7 +148,7 @@ Valid inputs foe drawing bar, line and axis-mixed charts are as follows.
 
 </table>
 
-## Custom models
+### Custom models
 
 where `GraphDataModel` , `AxisOptions` , `TooltipOptions` , `BarOptions` , `LineOptions`, `YMarkers` , `YRegions` are interfaces as follows.
 
@@ -254,7 +254,7 @@ This component is used for drawing pie and percentage charts. you have to add th
 </ngx-frappe-charts-percentage>
 ```
 
-## Valid inputs
+### Valid inputs
 
 Valid inputs foe drawing pecentage charts are as follows.
 
@@ -301,7 +301,7 @@ Valid inputs foe drawing pecentage charts are as follows.
   </tr>
 </table>
 
-## Custom models
+### Custom models
 
 where `GraphDataModel` , `BarOptions` are interfaces as follows.
 
@@ -344,7 +344,7 @@ This component is used for drawing Heatmap charts. you have to add the componant
     </ngx-frappe-charts-heatmap>
 ```
 
-## Valid inputs
+### Valid inputs
 
 Valid inputs foe drawing Heatmap charts are as follows.
 
@@ -381,7 +381,7 @@ Valid inputs foe drawing Heatmap charts are as follows.
   </tr>
 </table>
 
-## Custom models
+### Custom models
 
 where `HeatmapDataModel` is interfaces as follows.
 
