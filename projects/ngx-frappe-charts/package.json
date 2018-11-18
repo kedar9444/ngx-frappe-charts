@@ -1,6 +1,26 @@
 {
   "name": "ngx-frappe-chart",
-  "version": "0.0.2",
+  "description": "A simple and easy to use angular wrapper on top of frappe for generating awesome graphs.",
+  "author": "Kedar Paritkar <kedar.paritkar@angularway.com> (https://www.angularway.com)",
+  "homepage": "https://github.com/kedar9444/ngx-frappe-charts#readme",
+  "license": "MIT",
+  "version": "0.0.3",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kedar9444/ngx-frappe-chart.git"
+  },
+  "keywords": [
+    "Angular",
+    "Angular6",
+    "frappe",
+    "graph",
+    "charts"
+  ],
+  "bugs": {
+    "url": "https://github.com/kedar9444/ngx-frappe-chart/issues"
+  },
+
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
