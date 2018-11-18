@@ -1,10 +1,10 @@
 <div align="center">
     <img src="https://github.com/kedar9444/ngx-frappe-charts/blob/master/resources/logo/logo-sm.png" height="128">
     <a href="https://www.npmjs.com/package/ngx-frappe-chart">
-        <h2>Ngx-Frappe-Charts</h2>
+        <h2>Ngx-Frappe-Chart</h2>
     </a>
     <p align="center">
-        <p>GitHub-inspired modern, intuitive and responsive charts with zero dependencies</p>
+        <p>A simple and easy to use angular wrapper on top of frappe for generating awesome graphs.</p>
         <a href="https://www.npmjs.com/package/ngx-frappe-chart">
             <b>Download NPM Package » </b>
         </a>
@@ -14,30 +14,173 @@
     </p>
 </div>
 
-# NgxFrappeDemo
+## Install
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
+Install the package.
 
-## Development server
+```sh
+$ npm i -s ngx-frappe-chart
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Add the frappe library to your Angular.json file:
 
-## Code scaffolding
+**`angular.json`**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```json
+"scripts": ["./projects/ngx-frappe-charts/node_modules/frappe-charts/dist/frappe-charts.min.iife.js"]
+```
 
-## Build
+Declare the component in your module:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+**`src/app/app.module.ts`**
 
-## Running unit tests
+```ts
+import { FrappeChartsModule } from 'ngx-frappe-chart';
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+...
 
-## Running end-to-end tests
+@NgModule({
+	...
+	imports: [
+		...
+    FrappeChartsModule,
+		...
+	],
+	...
+})
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+# Usage
 
-## Further help
+Ngx-frappy-chart exports 3 different components i.e. bar, pie, and heatmap to draw similar charts. We will check each one them and how to use them.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## ngx-frappe-charts-bar
+
+This component is used for drawing bar, line nad mixed charts.
+
+```html
+<ngx-frappe-charts-bar
+  [type]="'bar'"
+  [data]="barChartData"
+  [height]="500"
+  [yMarkers]="yMarkers"
+  [yRegions]="yRegions"
+  [colors]="barChartColor"
+>
+</ngx-frappe-charts-bar>
+```
+
+<table>
+  <tr>
+    <th>Input</th>
+    <th>Type</th>
+    <th>Valid Input values</th>
+  </tr>
+  <tr>
+    <td>data</td>
+    <td>`GraphDataModel`</td>
+    <td> - </td>
+  </tr>
+  <tr>
+    <td>title</td>
+    <td>`string`</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>type</td>
+    <td>`string`</td>
+    <td>`bar` , `line` , `axis-mixed` </td>
+  </tr>
+    <tr>
+    <td>colors</td>
+    <td>`string[]`</td>
+    <td>Hexadecimal values for colors including # e.g `['#a8026f', '#db2d43', '#e76838']`</td>
+  </tr>
+    <tr>
+    <td>height</td>
+    <td>`number`</td>
+    <td>`default 240`</td>
+  </tr>
+      <tr>
+    <td>isNavigable</td>
+    <td>`boolean`</td>
+    <td>`true` or `false` `default false`</td>
+  </tr>
+  <tr>
+    <td>valuesOverPoints</td>
+    <td>`boolean`</td>
+    <td>`true` or `false` `default false`</td>
+  </tr>
+    <tr>
+    <td>axisOptions</td>
+    <td>`AxisOptions`</td>
+    <td> - </td>
+  </tr>
+      <tr>
+    <td>tooltipOptions</td>
+    <td>`TooltipOptions`</td>
+    <td>`</td>
+  </tr>
+      <tr>
+    <td>barOptions</td>
+    <td>`BarOptions`</td>
+    <td></td>
+  </tr>
+      <tr>
+    <td>lineOptions</td>
+    <td>`LineOptions`</td>
+    <td></td>
+  </tr>
+      <tr>
+    <td>yMarkers</td>
+    <td>`YMarkers`</td>
+    <td></td>
+  </tr>
+      <tr>
+    <td>yRegions</td>
+    <td>`YRegions`</td>
+    <td></td>
+  </tr>
+
+</table>
+
+Don't forget to check out the [RunKit embed docs](https://runkit.com/docs/embed#options).
+
+## Inputs
+
+### source : string
+
+Basically there are two inputs one is [gistId] and second is [gistFileName].
+
+**`[gistId]`** : is the id present after you username when you open your gist on github.
+
+**`[gistFileName]`** : Before creating any Gist github asks for the filename you have to enter the same.
+
+Please check below image for more details.
+
+```html
+<app-ngx-gist-runkit
+  [gistId]="gistId"
+  [gistFileName]="gistFileName"
+></app-ngx-gist-runkit>
+```
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Authors
+
+- **Billie Thompson** - _Initial work_ - [PurpleBooth](https://github.com/PurpleBooth)
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
