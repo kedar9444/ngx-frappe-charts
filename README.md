@@ -27,7 +27,7 @@ Add the frappe library to your Angular.json file:
 **`angular.json`**
 
 ```json
-"scripts": ["./projects/ngx-frappe-charts/node_modules/frappe-charts/dist/frappe-charts.min.iife.js"]
+    "scripts": [ "./node_modules/frappe-charts/dist/frappe-charts.min.iife.js"]
 ```
 
 Declare the component in your module:
