@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://github.com/kedar9444/ngx-frappe-charts/blob/master/resources/logo/logo-sm.png" height="128">
+    <img src="https://firebasestorage.googleapis.com/v0/b/angularpoc-f717b.appspot.com/o/packages%2Fngx-frappe-chart%2Flogo-sm.png?alt=media&token=d87afb4c-30d2-4a1d-8d2d-341901a986a9" height="128">
     <a href="https://www.npmjs.com/package/ngx-frappe-chart">
         <h2>Ngx-Frappe-Chart</h2>
     </a>
@@ -27,7 +27,16 @@ Add the frappe library to your Angular.json file:
 **`angular.json`**
 
 ```json
-    "scripts": [ "./node_modules/frappe-charts/dist/frappe-charts.min.iife.js"]
+ "architect": {
+    "build": {
+      ......
+      "options": {
+        ......
+          "scripts": [ "./node_modules/frappe-charts/dist/frappe-charts.min.iife.js"]
+        ......
+      } 
+    }
+}
 ```
 
 Declare the component in your module:
